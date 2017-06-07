@@ -18,7 +18,7 @@ export default class SideMenuTest extends Component {
     return (
       <View style={styles.container}>
         <SideMenu height={500} width={300} Menu={this.Menu()} menuWidth={200}>
-          <View style={{ flex: 1, backgroundColor: 'white',justifyContent:'center',alignItems:'center',borderWidth:0.5,borderRadius:5 }}>
+          <View style={{ flex: 1, backgroundColor: '#b0b000',justifyContent:'center',alignItems:'center', }}>
             <TouchableOpacity style={{ height: 50, width: 200, backgroundColor: '#B0E2FF' ,justifyContent:'center',alignItems:'center'}} onPress={() => { ToastAndroid.show('主界面点击',400) }} >
              <Text style={{ fontSize: 20 }}>点击测试</Text>
               </TouchableOpacity>
@@ -29,7 +29,7 @@ export default class SideMenuTest extends Component {
     );
   }
   Menu() {
-    return <View style={{ height: 500, width: 200, backgroundColor: 'white',borderWidth:0.5,borderRadius:5 }}>
+    return <View style={{flex:1, backgroundColor: 'white',}}>
       <TouchableOpacity style={{ height: 40, width: 200, backgroundColor: '#B0E2FF' }} onPress={() => { ToastAndroid.show('侧滑测试1', 400) }}><Text style={{ fontSize: 20 }}>测试1</Text></TouchableOpacity>
       <View style={{ height: 1, width: 200, backgroundColor: '#eeeeee' }} />
       <TouchableOpacity style={{ height: 40, width: 200, backgroundColor: '#B0E2FF' }} onPress={() => { ToastAndroid.show('侧滑测试2', 400) }}><Text style={{ fontSize: 20 }}>测试2</Text></TouchableOpacity>
