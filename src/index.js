@@ -16,8 +16,10 @@ export default class SideMenu extends Component {
       onStartShouldSetPanResponder: (evt, gestureState) => true,
       onStartShouldSetPanResponderCapture: (evt, gestureState) => false,
       onMoveShouldSetPanResponder: (evt, gestureState) => false,
-      onMoveShouldSetPanResponderCapture: (evt, gestureState) => false,
-
+      onMoveShouldSetPanResponderCapture: (evt, gestureState) => { return Math.abs(gestureState.dx)>Math.abs(gestureState.dy)},
+       onPanResponderTerminate: (evt, gestureState) => {
+          
+      },
       onPanResponderGrant: (evt, gestureState) => {
         this.pre = this.state.offset._value;
       },
@@ -51,7 +53,7 @@ export default class SideMenu extends Component {
       onStartShouldSetPanResponder: (evt, gestureState) => true,
       onStartShouldSetPanResponderCapture: (evt, gestureState) => this.state.open,
       onMoveShouldSetPanResponder: (evt, gestureState) => false,
-      onMoveShouldSetPanResponderCapture: (evt, gestureState) => false,
+      onMoveShouldSetPanResponderCapture: (evt, gestureState) => { return Math.abs(gestureState.dx)>Math.abs(gestureState.dy)},
 
       onPanResponderGrant: (evt, gestureState) => {
         this.pre = this.state.offset._value;
